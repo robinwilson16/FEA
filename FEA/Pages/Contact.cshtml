@@ -1,0 +1,66 @@
+﻿@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<div class="container-fluid boxSpacer">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md">
+                        <h1>
+                            <i class="fas fa-angle-double-right"></i> Contact us
+                        </h1>
+                        <p>
+                            If you would like to see how we may help you, please contact us using the form below:
+                        </p>
+                        <form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="inputName"><i class="fas fa-user"></i> Name</label>
+                                            <input type="email" class="form-control" id="inputName" placeholder="Your name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputCollege"><i class="fas fa-hotel"></i> College</label>
+                                            <input type="password" class="form-control" id="inputCollege" placeholder="Your college">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputEmail"><i class="fas fa-at"></i> Email</label>
+                                            <input type="email" class="form-control" id="inputEmail" aria-describedby="inputNameHelp" placeholder="Your email">
+                                            <small id="inputEmailHelp" class="form-text text-muted">We will never share your email with anyone else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inputPhone"><i class="fas fa-phone"></i> Phone Number</label>
+                                            <input type="tel" class="form-control" id="inputPhone" placeholder="Your phone number">
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="inputEnquiry"><i class="fas fa-edit"></i> Enquiry</label>
+                                            <textarea class="form-control enquiry" id="inputEnquiry" placeholder="Your enquiry"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md">
+                                    </div>
+                                    <div class="col-md text-center">
+                                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-pencil-alt"></i> Submit your enquiry</button>
+                                    </div>
+                                    <div class="col-md">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

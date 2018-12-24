@@ -1,0 +1,462 @@
+﻿@page
+@model FEA.Pages.MISSpecialistsModel
+@{
+    var XLabels = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData.Select(x => x.DimensionOne).ToList());
+    var YValues = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData.Select(x => x.Percentage).ToList());
+
+    var XLabels2 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData2.Select(x => x.DimensionOne).ToList());
+    var YValues2 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData2.Select(x => x.Quantity).ToList());
+
+    var XLabels3 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData3.Select(x => x.DimensionOne).ToList());
+    var YValues31 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData3.Select(x => x.Quantity).ToList());
+    var YValues32 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData3.Select(x => x.Quantity2).ToList());
+
+
+    ViewData["Title"] = "Permanently employed MIS Specialists @ FEA";
+}
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md-8">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md">
+                                    <h1>
+                                        <i class="fas fa-angle-double-right"></i> Permanently employed MIS Specialists
+                                    </h1>
+                                    <p>
+                                        Providing you with the insight you need on Key Performance Indicators, identifying areas where interventions are needed
+                                        and monitoring the progress of change to help ensure sustained improvement via easy monitoring.
+                                    </p>
+                                    <p>
+                                        Delivering reporting solutions bringing data to the forefront, helping ensure college staff know their data.
+                                    </p>
+                                    <p class="lead text-center">
+                                        <a class="btn btn-primary btn-lg" href="~/About#MISAndData" role="button" target="_blank"><i class="fas fa-users"></i> View our MIS and Data Team</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="chart-container">
+                            <canvas id="AttendanceChart2" style="width:100%; height:300px"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <div class="chart-container">
+                            <canvas id="AttendanceChart" style="width:100%; height:500px"></canvas>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                            Refresh the page to view chart with different random data
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md">
+                                    <h1>
+                                        <i class="fas fa-angle-double-right"></i> Types of reports we can produce
+                                    </h1>
+                                    <p>
+                                        As long as data is recorded in your systems we can extract it to turn it into key metrics.
+                                    </p>
+                                    <p>
+                                        Common types of reports we are asked to produce include:
+                                        <ul>
+                                            <li>Application conversion rates</li>
+                                            <li>Enrolments against target</li>
+                                            <li>Data validation and identification of input errors</li>
+                                            <li>R04 to R04 last Year numbers and funding comparison</li>
+                                            <li>Register missing marks</li>
+                                            <li>Staff utilisation</li>
+                                            <li>Room utilisation</li>
+                                            <li>
+                                                Generation of L3 target grades based on L2 performance and value added in-year
+                                                performance tracking
+                                            </li>
+                                            <li>English and Maths component results analysis</li>
+                                            <li>Outstanding achievement</li>
+                                            <li>Dashboards and Scorecards</li>
+                                            <li>Setting up processes to import and export data between systems avoiding double-entry</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <div class="chart-container">
+                            <canvas id="AttendanceChart3" style="width:100%; height:200px"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <h1>
+                            <i class="fas fa-angle-double-right"></i> Example reports
+                        </h1>
+                        <h2>
+                            Value-added report
+                        </h2>
+                        <p>
+                            FEA work with you to produce innovative solutions such as the report below which calculates the L2 GCSE score from
+                            prior attainment for each student, then uses ALPS to calculate a target grade for the L3 qualification the student
+                            is studying, then calculates the grade students are working at. Finally, it uses this data to calculate the
+                            value-added score.
+                        </p>
+                        <p>
+                            See below for an example of how this report works using only data from your ProMonitor System
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <p>
+                            <div class="alert alert-warning" role="alert">
+                                Please note these reports are currently slow to load as running on a dev server
+                            </div>
+                        </p>
+                        <p>
+                            <iframe src="http://ssrs.rwsservices.net/valueadded.htm" class="ssrsReport"></iframe>
+                        </p>
+                        <p class="lead text-center">
+                            <a class="btn btn-primary btn-lg" href="http://ssrs.rwsservices.net/valueaddedfs.htm" role="button" target="_blank"><i class="fas fa-table"></i> Open fullscreen</a>
+                            <a class="btn btn-primary btn-lg" href="http://ssrs.rwsservices.net/" role="button" target="_blank"><i class="fas fa-chart-pie"></i> View all reports</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <h2>
+                            Predicted achievement report
+                        </h2>
+                        <p>
+                            This example report combines data from your ProAchieve CL funded summary and ProMonitor where staff use the existing
+                            risk-rating against each student enrolment to predict whether a student is likely to achieve.
+                        </p>
+                        <p>
+                            This data is then aggregated to produce a predicted achievement rate for the course which can be displayed alongside the
+                            retention rate and other ProAchieve data fields. If reviewed each term, the ProMonitor audit trail can show a picture
+                            of the predictions per term to show if initial predictions were accurate and issues were picked up early with students
+                            allowing time for interventions to be put in place.
+                        </p>
+                        <p>
+                            See below for an example of how this report works using only data from your ProAchieve and ProMonitor Systems
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <p>
+                            <div class="alert alert-warning" role="alert">
+                                Please note these reports are currently slow to load as running on a dev server
+                            </div>
+                        </p>
+                        <p>
+                            <iframe src="http://ssrs.rwsservices.net/predach.htm" class="ssrsReport"></iframe>
+                        </p>
+                        <p class="lead text-center">
+                            <a class="btn btn-primary btn-lg" href="http://ssrs.rwsservices.net/predachfs.htm" role="button" target="_blank"><i class="fas fa-table"></i> Open fullscreen</a>
+                            <a class="btn btn-primary btn-lg" href="http://ssrs.rwsservices.net/" role="button" target="_blank"><i class="fas fa-chart-pie"></i> View all reports</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <h2>
+                            College Dashboard
+                        </h2>
+                        <p>
+                            This example uses Power BI, combining data from various sources to give an overall summary of college performance and
+                            financial health. Data is either retrieved from the college database directly or input into shared spreadsheets where
+                            each dept is responsible for updating the data for their area.
+                        </p>
+                        <p>
+                            These dashboard screens can be displayed on-screen or printed to A3. 
+                        </p>
+                        <p>
+                            See below for an example of how this report looks and use the navigation bar at the bottom to scroll through the 4 pages
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid background1 stickyPanel">
+    <div class="row">
+        <div class="col-md">
+            <div class="container">
+                <div class="row first">
+                    <div class="col-md">
+                        <p>
+                            <iframe src="https://app.powerbi.com/view?r=eyJrIjoiMGU3Y2RiMDctMzg5Yi00YzIyLTk2YzEtMmNiNzNjNDI3ZTgzIiwidCI6IjcxMjZjOGU3LWUyNjUtNGExMC04Y2ZhLWVhZDZjNzMyMDRjZSIsImMiOjh9" class="ssrsReport"></iframe>
+                        </p>
+                        <p class="lead text-center">
+                            <a class="btn btn-primary btn-lg" href="https://app.powerbi.com/view?r=eyJrIjoiMGU3Y2RiMDctMzg5Yi00YzIyLTk2YzEtMmNiNzNjNDI3ZTgzIiwidCI6IjcxMjZjOGU3LWUyNjUtNGExMC04Y2ZhLWVhZDZjNzMyMDRjZSIsImMiOjh9" role="button" target="_blank"><i class="fas fa-table"></i> Open fullscreen</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        var randomScalingFactor = function () { return Math.round(Math.random() * 100) };
+        //usage randomScalingFactor()
+
+        var chartName = "AttendanceChart";
+        var ctx = document.getElementById(chartName).getContext('2d');
+        var data = {
+            labels: @Html.Raw(XLabels),
+            datasets: [{
+                label: "Retention % by Dept",
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1,
+                data: @Html.Raw(YValues)
+            },
+            {
+                label: "Target 90%",
+                backgroundColor: [
+                    'transparent'
+                ],
+                borderColor: [
+                    'rgba(255,0,0,1)'
+                ],
+                type: 'line',
+                borderWidth: 1,
+                data: [0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9]
+            }]
+        };
+
+        var options = {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 1,
+                        beginAtZero: true,
+                        interval: 1,
+                        callback: function (value) {
+                            return (value / this.max * 100).toFixed(0) + '%'; // convert it to percentage
+                        },
+                    },
+                    gridLines: {
+                        display: true,
+                        color: "rgba(255,99,164,0.2)"
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        min: 0,
+                        beginAtZero: true,
+                        autoSkip: false
+                    },
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            }
+        };
+
+       var myChart = new  Chart(ctx, {
+            options: options,
+            data: data,
+            type:'bar'
+        });
+
+        var chartName2 = "AttendanceChart2";
+        var ctx2 = document.getElementById(chartName2).getContext('2d');
+        var data2 = {
+            labels: @Html.Raw(XLabels2),
+            datasets: [{
+                label: "Attendance by Dept",
+                backgroundColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 205, 86, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1,
+                data: @Html.Raw(YValues2)
+            }]
+        };
+
+        var options2 = {
+            maintainAspectRatio: false,
+        };
+
+       var myChart2 = new  Chart(ctx2, {
+            options: options2,
+            data: data2,
+            type:'doughnut'
+        });
+
+        var chartName = "AttendanceChart3";
+        var ctx3 = document.getElementById(chartName).getContext('2d');
+        var data3 = {
+            labels: @Html.Raw(XLabels3),
+            datasets: [{
+                label: "Target Cashflow",
+                backgroundColor: [
+                    'transparent'
+                ],
+                borderColor: [
+                    '#959595'
+                ],
+                borderWidth: 2,
+                borderDash: [
+                    5, 15
+                ],
+                data: @Html.Raw(YValues31),
+            },
+            {
+                label: "Actual Cashflow",
+                backgroundColor: [
+                    'transparent'
+                ],
+                borderColor: [
+                    '#69d7de'
+                ],
+                borderWidth: 2,
+                data: @Html.Raw(YValues32),
+            }]
+        };
+
+        var options3 = {
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        beginAtZero: true,
+                        callback: function (value) {
+                            if (parseInt(value) >= 1000) {
+                                return '£' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            } else {
+                                return '£' + value;
+                            }
+                        },
+                    },
+                    gridLines: {
+                        display: true,
+                        color: "rgba(255,99,164,0.2)"
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        min: 0,
+                        beginAtZero: true
+                    },
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            }
+        };
+
+       var myChart3 = new  Chart(ctx3, {
+            options: options3,
+            data: data3,
+            type:'line'
+        });
+    });
+</script>  
