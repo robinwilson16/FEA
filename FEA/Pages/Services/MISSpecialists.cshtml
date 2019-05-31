@@ -1,17 +1,6 @@
 ﻿@page
 @model FEA.Pages.MISSpecialistsModel
 @{
-    var XLabels = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData.Select(x => x.DimensionOne).ToList());
-    var YValues = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData.Select(x => x.Percentage).ToList());
-
-    var XLabels2 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData2.Select(x => x.DimensionOne).ToList());
-    var YValues2 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData2.Select(x => x.Quantity).ToList());
-
-    var XLabels3 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData3.Select(x => x.DimensionOne).ToList());
-    var YValues31 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData3.Select(x => x.Quantity).ToList());
-    var YValues32 = Newtonsoft.Json.JsonConvert.SerializeObject(Model.ChartData3.Select(x => x.Quantity2).ToList());
-
-
     ViewData["Title"] = "Permanently employed MIS Specialists @ FEA";
 }
 
@@ -243,7 +232,7 @@
                             each dept is responsible for updating the data for their area.
                         </p>
                         <p>
-                            These dashboard screens can be displayed on-screen or printed to A3. 
+                            These dashboard screens can be displayed on-screen or printed to A3.
                         </p>
                         <p>
                             See below for an example of how this report looks and use the navigation bar at the bottom to scroll through the 4 pages
@@ -275,16 +264,53 @@
 </div>
 
 <script>
-    $(function () {
-        var randomScalingFactor = function () { return Math.round(Math.random() * 100) };
-        //usage randomScalingFactor()
+    loadCharts();
+    function loadCharts() {
+        return new Promise(resolve => {
+            let dataToLoad = `/Charts/`;
 
+            $.get(dataToLoad, function (data) {
+
+            })
+                .then(data => {
+                    try {
+                        doLoadCharts(data);
+                        resolve(1);
+                    }
+                    catch (e) {
+                        doErrorModal("Error Storing Data in Browser", "Sorry an error occurred storing data in your web browser. Please check the local storage settings and your available disk space.");
+                        resolve(0);
+                    }
+                })
+                .fail(function () {
+                    let title = `Error Loading Courses`;
+                    let content = `Sorry an error occurred loading the list of courses. Please try again.`;
+
+                    doErrorModal(title, content);
+                });
+        });
+    }
+
+    function doLoadCharts(data) {
+        var randomScalingFactor = function () { return Math.round(Math.random() * 100) };
+
+        let title1 = data.charts[0].title;
+        let labels1 = data.charts[0].chartData.map(a => a.dimensionOne);
+        let percentages1 = data.charts[0].chartData.map(a => a.percentage);
+
+        let labels2 = data.charts[1].chartData.map(a => a.dimensionOne);
+        let quantities2 = data.charts[1].chartData.map(a => a.quantity);
+
+        let labels3 = data.charts[2].chartData.map(a => a.dimensionOne);
+        let quantities3a = data.charts[2].chartData.map(a => a.quantity);
+        let quantities3b = data.charts[2].chartData.map(a => a.quantity2);
+        
         var chartName = "AttendanceChart";
         var ctx = document.getElementById(chartName).getContext('2d');
         var data = {
-            labels: @Html.Raw(XLabels),
+            labels: labels1,
             datasets: [{
-                label: "Retention % by Dept",
+                label: title1,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -306,7 +332,7 @@
                     'rgba(54, 162, 235, 1)',
                 ],
                 borderWidth: 1,
-                data: @Html.Raw(YValues)
+                data: percentages1
             },
             {
                 label: "Target 90%",
@@ -362,7 +388,7 @@
         var chartName2 = "AttendanceChart2";
         var ctx2 = document.getElementById(chartName2).getContext('2d');
         var data2 = {
-            labels: @Html.Raw(XLabels2),
+            labels: labels2,
             datasets: [{
                 label: "Attendance by Dept",
                 backgroundColor: [
@@ -376,7 +402,7 @@
                     'rgba(255, 99, 132, 1)'
                 ],
                 borderWidth: 1,
-                data: @Html.Raw(YValues2)
+                data: quantities2
             }]
         };
 
@@ -393,7 +419,7 @@
         var chartName = "AttendanceChart3";
         var ctx3 = document.getElementById(chartName).getContext('2d');
         var data3 = {
-            labels: @Html.Raw(XLabels3),
+            labels: labels3,
             datasets: [{
                 label: "Target Cashflow",
                 backgroundColor: [
@@ -406,7 +432,7 @@
                 borderDash: [
                     5, 15
                 ],
-                data: @Html.Raw(YValues31),
+                data: quantities3a
             },
             {
                 label: "Actual Cashflow",
@@ -417,7 +443,7 @@
                     '#69d7de'
                 ],
                 borderWidth: 2,
-                data: @Html.Raw(YValues32),
+                data: quantities3b
             }]
         };
 
@@ -458,5 +484,14 @@
             data: data3,
             type:'line'
         });
-    });
-</script>  
+    }
+</script>
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/charts.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/charts.js" asp-append-version="true"></script>
+    </environment>
+}

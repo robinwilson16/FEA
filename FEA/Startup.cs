@@ -58,6 +58,17 @@ namespace FEA
                 app.UseHsts();
             }
 
+            //Avoid CORS errors with JS files served over CDN
+            app.UseCors(builder => builder.WithOrigins(
+                "http://www.thecomfortzonesalon.co.uk",
+                "https://www.thecomfortzonesalon.co.uk",
+                "http://thecomfortzonesalon.co.uk",
+                "https://thecomfortzonesalon.co.uk"
+                )
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
+
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
