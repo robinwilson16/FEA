@@ -23,21 +23,6 @@
 
     <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-
-    <environment include="Development">
-        <script src="~/lib/jquery/jquery.js"></script>
-        <script src="~/lib/Chart.js/Chart.min.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-                asp-fallback-src="~/lib/jquery/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous">
-        </script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" asp-append-version="true"></script>
-    </environment>
-
-
 </head>
 <body data-spy="scroll" data-target="#TopNavBar" data-offset="50">
     <div id="Top" class="container siteLogo">
@@ -142,24 +127,24 @@
     </div>
 
     <environment include="Development">
-        @*<script src="~/lib/jquery/jquery.js"></script>*@
+        <script src="~/lib/jquery/jquery.js"></script>
         <script src="~/lib/twitter-bootstrap/js/bootstrap.bundle.js"></script>
-        @*<script src="~/lib/Chart.js/Chart.min.js"></script>*@
+        <script src="~/lib/Chart.js/Chart.min.js"></script>
         <script src="~/lib/ScrollMagic/ScrollMagic.js" asp-append-version="true"></script>
         <script src="~/lib/ScrollMagic/plugins/debug.addIndicators.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
-        @*<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
                 asp-fallback-src="~/lib/jquery/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous">
-        </script>*@
+        </script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"
                 asp-fallback-src="~/lib/twitter-bootstrap/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous">
         </script>
-        @*<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" asp-append-version="true"></script>*@
+        <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" asp-append-version="true"></script>
         <script src="~/lib/ScrollMagic/ScrollMagic.min.js" asp-append-version="true"></script>
         <script src="~/lib/ScrollMagic/plugins/debug.addIndicators.min.js" asp-append-version="true"></script>
     </environment>
