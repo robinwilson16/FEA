@@ -14,10 +14,7 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/twitter-bootstrap/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.2/css/all.css"
-              crossorigin="anonymous"
-              asp-fallback-href="~/lib/font-awesome/css/all.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" crossorigin="anonymous" />
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" asp-append-version="true" />
     </environment>
 
@@ -149,6 +146,8 @@
         <script src="~/lib/ScrollMagic/plugins/debug.addIndicators.min.js" asp-append-version="true"></script>
     </environment>
 
+    <script src="~/js/palette.js" asp-append-version="true"></script>
+    <script src="~/js/modals.js" asp-append-version="true"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)

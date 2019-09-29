@@ -7,7 +7,7 @@ namespace FEA.Models
 {
     public class Chart
     {
-        public string Title { get; set; }
+        public string ChartTitle { get; set; }
         public ICollection<ChartData> ChartData { get; set; }
     }
 }

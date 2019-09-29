@@ -22,131 +22,139 @@ namespace FEA.Pages.Charts
             //Define charts with random data
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Art and Design",
-                Percentage = rnd.NextDouble()
+                Dimension = "Art and Design",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Basic Skills",
-                Percentage = rnd.NextDouble()
+                Dimension = "Basic Skills",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Business Administration",
-                Percentage = rnd.NextDouble()
+                Dimension = "Business Administration",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Construction",
-                Percentage = rnd.NextDouble()
+                Dimension = "Construction",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Engineering",
-                Percentage = rnd.NextDouble()
+                Dimension = "Engineering",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Foundation Studies",
-                Percentage = rnd.NextDouble()
+                Dimension = "Foundation Studies",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Services to Business",
-                Percentage = rnd.NextDouble()
+                Dimension = "Services to Business",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
             ChartData1.Add(new ChartData
             {
-                DimensionOne = "Travel and Tourism",
-                Percentage = rnd.NextDouble()
+                Dimension = "Travel and Tourism",
+                Percentage1 = rnd.NextDouble(),
+                Percentage2 = 0.9
             });
 
             ChartData2.Add(new Models.ChartData
             {
-                DimensionOne = "Courses with Contribution 90-100%",
-                Quantity = rnd.Next(10)
+                Dimension = "Courses with Contribution 90-100%",
+                Quantity1 = rnd.Next(10)
             });
             ChartData2.Add(new Models.ChartData
             {
-                DimensionOne = "Courses with Contribution 80-90%",
-                Quantity = rnd.Next(10)
+                Dimension = "Courses with Contribution 80-90%",
+                Quantity1 = rnd.Next(10)
             });
             ChartData2.Add(new Models.ChartData
             {
-                DimensionOne = "Courses with Contribution < 80%",
-                Quantity = rnd.Next(10)
+                Dimension = "Courses with Contribution < 80%",
+                Quantity1 = rnd.Next(10)
             });
 
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Apr",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Apr",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "May",
-                Quantity = rnd.Next(1000000),
+                Dimension = "May",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Jun",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Jun",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Jul",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Jul",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Aug",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Aug",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Sep",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Sep",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Oct",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Oct",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Nov",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Nov",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Dec",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Dec",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Jan",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Jan",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Feb",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Feb",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
             ChartData3.Add(new Models.ChartData
             {
-                DimensionOne = "Mar",
-                Quantity = rnd.Next(1000000),
+                Dimension = "Mar",
+                Quantity1 = rnd.Next(1000000),
                 Quantity2 = rnd.Next(1000000)
             });
 
@@ -154,25 +162,25 @@ namespace FEA.Pages.Charts
 
             Chart.Add(new Models.Chart
             {
-                Title = "Attendance % By Dept",
+                ChartTitle = "Attendance % By Dept",
                 ChartData = ChartData1
             });
 
             Chart.Add(new Models.Chart
             {
-                Title = "Course Contribution Rates",
+                ChartTitle = "Course Contribution Rates",
                 ChartData = ChartData2
             });
 
             Chart.Add(new Models.Chart
             {
-                Title = "Budget vs Actual",
+                ChartTitle = "Budget vs Actual",
                 ChartData = ChartData3
             });
 
             var collectionWrapper = new
             {
-                Charts = Chart
+                charts = Chart
             };
 
             return new JsonResult(collectionWrapper);

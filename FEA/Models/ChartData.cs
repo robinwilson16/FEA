@@ -7,9 +7,10 @@ namespace FEA.Models
 {
     public class ChartData
     {
-        public string DimensionOne { get; set; }
-        public int Quantity { get; set; }
+        public string Dimension { get; set; }
+        public int Quantity1 { get; set; }
         public int Quantity2 { get; set; }
-        public double Percentage { get; set; }
+        public double Percentage1 { get; set; }
+        public double Percentage2 { get; set; }
     }
 }
