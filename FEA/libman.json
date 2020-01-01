@@ -4,7 +4,7 @@
   "libraries": [
     {
       "provider": "cdnjs",
-      "library": "twitter-bootstrap@4.3.1",
+      "library": "twitter-bootstrap@4.4.1",
       "destination": "wwwroot/lib/twitter-bootstrap/"
     },
     {
@@ -24,7 +24,7 @@
     },
     {
       "provider": "cdnjs",
-      "library": "Chart.js@2.8.0",
+      "library": "Chart.js@2.9.3",
       "destination": "wwwroot/lib/Chart.js/"
     }
   ]
